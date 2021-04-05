@@ -1,8 +1,9 @@
 ember-html-excerpt
 ==============================================================================
 
-[Short description of the addon.]
-
+This is a super simple addon that contains exactly one helper `{{excerpt}}`
+which is designed to take a HTML string in and return an "excerpt" of the text
+contained in that HTML.
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -23,7 +24,11 @@ ember install ember-html-excerpt
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+By Default the excerpt helper will extract the first 50 words from the HTML that
+is passed in.
+
+TODO: if anyone wants to contribute more details on the API of the excerpt
+helper any PR would be much appreciated 👍
 
 
 Contributing
