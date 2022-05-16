@@ -29,7 +29,7 @@ module('Integration | Helper | excerpt', function (hooks) {
     test(testCase.name, async function (assert) {
       this.set('inputValue', testCase.input);
 
-      await render(hbs`{{excerpt inputValue}}`);
+      await render(hbs`{{excerpt this.inputValue}}`);
 
       assert.equal(this.element.textContent, testCase.expected);
     });
