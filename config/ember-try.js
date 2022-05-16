@@ -95,6 +95,26 @@ module.exports = async function () {
       },
       embroiderSafe(),
       embroiderOptimized(),
+      {
+        name: 'no-deprecations',
+        npm: {
+          devDependencies: {
+            'ember-deprecation-error': '*',
+          },
+        },
+      },
+      {
+        name: 'ember-release-no-deprecations',
+        npm: {
+          dependencies: {
+            'ember-auto-import': '^2.0.0',
+          },
+          devDependencies: {
+            'ember-source': await getChannelURL('release'),
+            'ember-deprecation-error': '*',
+          },
+        },
+      },
     ],
   };
 };
