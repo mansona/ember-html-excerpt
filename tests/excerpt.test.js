@@ -1,5 +1,5 @@
 import { it, describe } from 'vitest';
-import { excerpt } from './excerpt.js';
+import { excerpt } from '../src/helpers/excerpt.js';
 import { expect } from 'vitest';
 
 const cases = [

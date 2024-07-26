@@ -72,6 +72,9 @@
   "ember-addon": {
     "version": 2,
     "type": "addon",
-    "main": "addon-main.cjs"
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./helpers/excerpt.js": "./dist/_app_/helpers/excerpt.js"
+    }
   }
 }
