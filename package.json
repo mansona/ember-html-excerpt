@@ -8,75 +8,69 @@
   "repository": "https://github.com/mansona/ember-html-excerpt",
   "license": "MIT",
   "author": "Chris Manson <chris@manson.ie>",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.cjs"
   },
+  "files": [
+    "addon-main.cjs",
+    "declarations",
+    "dist"
+  ],
   "scripts": {
-    "build": "ember build --environment=production",
-    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
-    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
-    "lint:hbs": "ember-template-lint .",
-    "lint:hbs:fix": "ember-template-lint . --fix",
+    "build": "rollup --config",
+    "lint": "concurrently 'pnpm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'pnpm:lint:*:fix' --names 'fix:'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "release": "release-it",
-    "start": "ember serve",
-    "test": "npm-run-all lint test:*",
-    "test:ember": "ember test",
-    "ember-compatibility-tests": "ember try:each"
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "vitest"
   },
   "dependencies": {
-    "downsize-cjs": "^1.0.1",
-    "ember-auto-import": "^1.12.0 || ^2.0.0",
-    "ember-cli-babel": "^7.26.10",
-    "ember-cli-htmlbars": "^5.7.2"
+    "@embroider/addon-shim": "^1.8.7",
+    "decorator-transforms": "^2.0.0",
+    "downsize-cjs": "^1.1.0"
   },
   "devDependencies": {
-    "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.6.0",
-    "@embroider/test-setup": "^0.48.1",
-    "@glimmer/component": "^1.0.4",
-    "@glimmer/tracking": "^1.0.4",
-    "babel-eslint": "^10.1.0",
-    "broccoli-asset-rev": "^3.0.0",
-    "ember-cli": "~3.28.5",
-    "ember-cli-dependency-checker": "^3.2.0",
-    "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.2",
-    "ember-disable-prototype-extensions": "^1.1.3",
-    "ember-export-application-global": "^2.0.1",
-    "ember-load-initializers": "^2.1.2",
-    "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-page-title": "^7.0.0",
-    "ember-qunit": "^5.1.5",
-    "ember-resolver": "^8.0.3",
-    "ember-source": "~3.28.8",
-    "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^3.15.0",
-    "ember-try": "^1.4.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-ember": "^10.5.8",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-qunit": "^6.2.0",
-    "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.5.1",
-    "qunit": "^2.17.2",
-    "qunit-dom": "^1.6.0",
-    "release-it": "^14.5.1",
-    "webpack": "^5.52.1"
+    "@babel/core": "^7.24.4",
+    "@babel/eslint-parser": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
+    "@embroider/addon-dev": "^4.3.1",
+    "@embroider/compat": "3.5.7-unstable.324f52a",
+    "@embroider/config-meta-loader": "0.0.1-unstable.324f52a",
+    "@embroider/core": "3.4.15-unstable.324f52a",
+    "@embroider/test-setup": "4.0.1-unstable.324f52a",
+    "@embroider/vite": "0.2.1-unstable.324f52a",
+    "@rollup/plugin-babel": "^6.0.4",
+    "babel-plugin-ember-template-compilation": "^2.2.5",
+    "concurrently": "^8.2.2",
+    "ember-cli": "^5.10.0",
+    "ember-source": "^5.10.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-ember": "^12.0.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^17.3.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "prettier-plugin-ember-template-tag": "^2.0.2",
+    "rollup": "^4.16.4",
+    "rollup-plugin-copy": "^3.5.0",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.4"
   },
-  "engines": {
-    "node": "12.* || 14.* || >= 16"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember": {
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
-  }
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs"
+  },
+  "packageManager": "pnpm@9.5.0"
 }

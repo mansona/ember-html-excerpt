@@ -1,6 +1,5 @@
 import { helper } from '@ember/component/helper';
-import { htmlSafe } from '@ember/string';
-import { isEmpty } from '@ember/utils';
+import { htmlSafe } from '@ember/template';
 import downsize from 'downsize-cjs';
 
 export function getExcerpt(html, truncateOptions) {
@@ -19,11 +18,11 @@ export function stripHTML(html) {
   // Strip inline and bottom footnotes
   let strippedHTML = html.replace(
     /<a href="#fn.*?rel="footnote">.*?<\/a>/gi,
-    ''
+    '',
   );
   strippedHTML = strippedHTML.replace(
     /<div class="footnotes"><ol>.*?<\/ol><\/div>/,
-    ''
+    '',
   );
 
   // Strip other html
@@ -33,19 +32,18 @@ export function stripHTML(html) {
   return strippedHTML;
 }
 
-export function excerpt(content, options) {
-  let truncateOptions = options || {};
+export function excerpt(content, options = {}) {
   const excerptText = options.custom_excerpt
     ? String(options.custom_excerpt)
     : String(content);
 
-  let { words, characters } = truncateOptions;
-  truncateOptions = { words, characters };
+  let { words, characters } = options;
+  let truncateOptions = { words, characters };
   Object.keys(truncateOptions).map(function (key) {
     truncateOptions[key] = parseInt(truncateOptions[key], 10);
   });
 
-  if (!isEmpty(options.custom_excerpt)) {
+  if (options?.custom_excerpt?.length) {
     truncateOptions.characters = options.custom_excerpt.length;
     if (truncateOptions.words) {
       delete truncateOptions.words;

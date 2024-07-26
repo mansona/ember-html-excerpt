@@ -1,7 +1,6 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import { it, describe } from 'vitest';
+import { excerpt } from './excerpt.js';
+import { expect } from 'vitest';
 
 const cases = [
   {
@@ -22,16 +21,10 @@ const cases = [
   },
 ];
 
-module('Integration | Helper | excerpt', function (hooks) {
-  setupRenderingTest(hooks);
-
-  cases.forEach((testCase) => {
-    test(testCase.name, async function (assert) {
-      this.set('inputValue', testCase.input);
-
-      await render(hbs`{{excerpt this.inputValue}}`);
-
-      assert.equal(this.element.textContent, testCase.expected);
+describe('excerpt helper function', function () {
+  for (let item of cases) {
+    it(item.name, function () {
+      expect(excerpt(item.input)).to.equal(item.expected);
     });
-  });
+  }
 });
