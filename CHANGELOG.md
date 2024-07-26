@@ -2,6 +2,17 @@
 
 ## Release (2024-07-26)
 
+ember-html-excerpt 1.0.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-html-excerpt`
+  * [#9](https://github.com/mansona/ember-html-excerpt/pull/9) move test to tests folder ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2024-07-26)
+
 ember-html-excerpt 1.0.0 (major)
 
 #### :boom: Breaking Change
