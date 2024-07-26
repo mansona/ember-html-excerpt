@@ -1,28 +1,21 @@
-ember-html-excerpt
-==============================================================================
+# ember-html-excerpt
 
 This is a super simple addon that contains exactly one helper `{{excerpt}}`
 which is designed to take a HTML string in and return an "excerpt" of the text
 contained in that HTML.
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
-* Ember.js v3.24 or above
-* Ember CLI v3.24 or above
-* Node.js v12 or above
+- Ember.js v3.24 or above
+- Embroider or ember-auto-import v2
 
-
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-html-excerpt
 ```
 
-
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 By Default the excerpt helper will extract the first 50 words from the HTML that
 is passed in.
@@ -30,14 +23,10 @@ is passed in.
 TODO: if anyone wants to contribute more details on the API of the excerpt
 helper any PR would be much appreciated 👍
 
-
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).

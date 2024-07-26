@@ -1,21 +1,18 @@
 # unconventional js
 /blueprints/*/files/
-/vendor/
 
 # compiled output
 /dist/
-/tmp/
-
-# dependencies
-/bower_components/
-/node_modules/
+/declarations/
 
 # misc
 /coverage/
+ within a package
+
+# misc
 !.*
-.eslintcache
+.lint-todo/
 
 # ember-try
 /.node_modules.ember-try/
-/bower.json.ember-try
-/package.json.ember-try
+/pnpm-lock.ember-try.yaml
