@@ -1,21 +1,17 @@
 {
   "solution": {
     "ember-html-excerpt": {
-      "impact": "major",
-      "oldVersion": "0.2.0",
-      "newVersion": "1.0.0",
+      "impact": "patch",
+      "oldVersion": "1.0.0",
+      "newVersion": "1.0.1",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
-        },
-        {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2024-07-26)\n\nember-html-excerpt 1.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-html-excerpt`\n  * [#6](https://github.com/mansona/ember-html-excerpt/pull/6) upgrade to v2 ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-html-excerpt`\n  * [#7](https://github.com/mansona/ember-html-excerpt/pull/7) setup release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2024-07-26)\n\nember-html-excerpt 1.0.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-html-excerpt`\n  * [#9](https://github.com/mansona/ember-html-excerpt/pull/9) move test to tests folder ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
