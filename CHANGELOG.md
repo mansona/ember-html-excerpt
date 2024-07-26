@@ -1,3 +1,5 @@
+# Changelog
+
 0.2.0 / 2022-05-16
 ==================
 * update downsize-cjs to allow it to support esm directly #5 from @mansona
